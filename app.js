@@ -51,6 +51,75 @@ function dayRouteUrl(day){
   return googleDirectionsUrl(coords);
 }
 
+function weatherCoords(day){
+  if(hasCoords({ coords: day.weatherCoords })) return day.weatherCoords;
+  if(hasCoords({ coords: day.center })) return day.center;
+  return dayMapCoords(day)[0] || hotelCoords();
+}
+
+function weatherCodeLabel(code){
+  const labels = {
+    0:"trời quang",
+    1:"ít mây",
+    2:"mây rải rác",
+    3:"nhiều mây",
+    45:"sương mù",
+    48:"sương mù đóng băng",
+    51:"mưa phùn nhẹ",
+    53:"mưa phùn",
+    55:"mưa phùn dày",
+    56:"mưa phùn lạnh nhẹ",
+    57:"mưa phùn lạnh",
+    61:"mưa nhỏ",
+    63:"mưa vừa",
+    65:"mưa to",
+    66:"mưa lạnh nhẹ",
+    67:"mưa lạnh",
+    71:"tuyết nhẹ",
+    73:"tuyết vừa",
+    75:"tuyết dày",
+    77:"hạt tuyết",
+    80:"mưa rào nhẹ",
+    81:"mưa rào vừa",
+    82:"mưa rào mạnh",
+    85:"mưa tuyết rào nhẹ",
+    86:"mưa tuyết rào mạnh",
+    95:"dông",
+    96:"dông kèm mưa đá nhẹ",
+    99:"dông kèm mưa đá mạnh"
+  };
+  return labels[code] || "thời tiết chưa phân loại";
+}
+
+function formatWeatherForecast(day, daily){
+  const min = daily.temperature_2m_min?.[0];
+  const max = daily.temperature_2m_max?.[0];
+  const probability = daily.precipitation_probability_max?.[0];
+  const rain = daily.precipitation_sum?.[0];
+  const code = daily.weather_code?.[0];
+  const date = formatShortDate(daily.time?.[0] || day.date);
+  const temps = Number.isFinite(min) && Number.isFinite(max) ? `${min.toFixed(1)}-${max.toFixed(1)}°C` : "";
+  const rainChance = Number.isFinite(probability) ? `xác suất mưa ${probability}%` : "";
+  const rainAmount = Number.isFinite(rain) ? `lượng mưa khoảng ${rain.toFixed(1)} mm` : "";
+  const details = [rainChance, rainAmount].filter(Boolean).join(", ");
+  const label = weatherCodeLabel(code);
+  return `${date}: ${temps}${temps ? ", " : ""}${label}${details ? `; ${details}` : ""}.`;
+}
+
+function weatherApiUrl(day){
+  const coords = weatherCoords(day);
+  if(!day.date || !coords) return "";
+  const params = new URLSearchParams({
+    latitude:coords[0],
+    longitude:coords[1],
+    daily:"weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum",
+    timezone:window.TRIP_DATA.trip.timezone || "Asia/Ho_Chi_Minh",
+    start_date:day.date,
+    end_date:day.date
+  });
+  return `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
+}
+
 function defaultCenter(firstDay){
   return firstDay.center || hotelCoords() || dayMapCoords(firstDay)[0] || [10.25, 103.95];
 }
@@ -143,9 +212,13 @@ function renderOverview(day){
   const trip = window.TRIP_DATA.trip;
   const routeUrl = dayRouteUrl(day);
   const hotelActionClass = hasCoords(trip.hotel) ? " fact-action" : "";
-  const transportContent = `
-    <b>Di chuyển</b>
-    <span>${day.transportation?.local || trip.transportation?.local || "Chưa có"}</span>
+  const canRefreshWeather = Boolean(weatherApiUrl(day));
+  const routeLink = routeUrl
+    ? `<a class="summary-route-link" href="${routeUrl}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-route"></i> Mở lộ trình trong Google Maps</a>`
+    : "";
+  const weatherContent = `
+    <b>Thời tiết${day.weatherLocation ? ` · ${day.weatherLocation}` : ""}${canRefreshWeather ? ` <i class="fa-solid fa-rotate weather-refresh-icon"></i>` : ""}</b>
+    <span>${day.weather || "Chưa cập nhật"}</span>
   `;
   $("overviewCard").innerHTML = `
     <div class="day-summary">
@@ -154,21 +227,53 @@ function renderOverview(day){
         <h2>${day.title || `Ngày ${day.day}`}</h2>
       </div>
       ${day.summary ? `<p>${day.summary}</p>` : ""}
+      ${routeLink}
     </div>
     <div class="overview-grid">
       <button class="fact${hotelActionClass}" id="hotelFact" type="button" ${hasCoords(trip.hotel) ? "" : "disabled"}>
         <b>Khách sạn</b><span>${trip.hotel?.name || "Chưa có"}</span>
       </button>
-      <div class="fact"><b>Thời tiết</b><span>${day.weather || "Chưa cập nhật"}</span></div>
-      <div class="fact"><b>Chi phí</b><span>${day.estimatedCost || "Chưa ước tính"}</span></div>
-      ${routeUrl
-        ? `<a class="fact fact-action route-fact" href="${routeUrl}" target="_blank" rel="noopener noreferrer">${transportContent}</a>`
-        : `<div class="fact">${transportContent}</div>`}
+      ${canRefreshWeather
+        ? `<button class="fact fact-action weather-fact" id="weatherFact" type="button" title="Cập nhật dự báo thời tiết">${weatherContent}</button>`
+        : `<div class="fact weather-fact">${weatherContent}</div>`}
     </div>
   `;
 
   const hotelFact = $("hotelFact");
   if(hotelFact && hasCoords(trip.hotel)) hotelFact.addEventListener("click", focusHotel);
+  const weatherFact = $("weatherFact");
+  if(weatherFact) weatherFact.addEventListener("click", () => refreshWeather(day));
+}
+
+async function refreshWeather(day){
+  const weatherFact = $("weatherFact");
+  const url = weatherApiUrl(day);
+  if(!weatherFact || !url) return;
+
+  const label = `Thời tiết${day.weatherLocation ? ` · ${day.weatherLocation}` : ""} <i class="fa-solid fa-rotate weather-refresh-icon is-spinning"></i>`;
+  weatherFact.disabled = true;
+  weatherFact.classList.add("loading");
+  weatherFact.innerHTML = `<b>${label}</b><span>Đang cập nhật dự báo...</span>`;
+
+  try{
+    const response = await fetch(url);
+    if(!response.ok) throw new Error(`Weather request failed: ${response.status}`);
+    const forecast = await response.json();
+    const updatedWeather = formatWeatherForecast(day, forecast.daily || {});
+    day.weather = updatedWeather;
+    weatherFact.innerHTML = `
+      <b>Thời tiết${day.weatherLocation ? ` · ${day.weatherLocation}` : ""} <i class="fa-solid fa-rotate weather-refresh-icon"></i></b>
+      <span>${updatedWeather}</span>
+    `;
+  }catch(error){
+    weatherFact.innerHTML = `
+      <b>Thời tiết${day.weatherLocation ? ` · ${day.weatherLocation}` : ""} <i class="fa-solid fa-rotate weather-refresh-icon"></i></b>
+      <span>${day.weather || "Không cập nhật được dự báo. Hãy thử lại khi có mạng."}</span>
+    `;
+  }finally{
+    weatherFact.disabled = false;
+    weatherFact.classList.remove("loading");
+  }
 }
 
 function renderDay(idx){

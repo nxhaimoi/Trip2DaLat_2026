@@ -29,7 +29,10 @@ Không cần sửa HTML/CSS/JS.
 - `trip.hotel.coords`: tọa độ khách sạn, dùng để hiện marker khách sạn trên bản đồ.
 - `trip.hotel`: được render trong ô `Khách sạn`; bấm vào ô này sẽ focus marker khách sạn trên bản đồ.
 - `days[].date`: ngày cụ thể của lịch trình.
-- `days[].routeMapUrl`: link Google Maps điều hướng tuyến đường trong ngày; ô `Di chuyển` sẽ mở link này.
+- `days[].routeMapUrl`: link Google Maps điều hướng tuyến đường trong ngày; link này được đặt ngay sau phần summary của ngày.
+- `days[].weatherLocation`: khu vực dùng để hiển thị tiêu đề ô thời tiết.
+- `days[].weatherCoords`: tọa độ `[lat, lng]` dùng để bấm ô `Thời tiết` và cập nhật dự báo trong ngày từ Open-Meteo.
+- `days[].weather`: nội dung dự báo mặc định/fallback; khi người xem bấm ô `Thời tiết`, trang sẽ cập nhật nội dung hiển thị trong trình duyệt nhưng không ghi ngược vào file `trip-data.js`.
 - `days[].locations[]`: danh sách điểm đến trong ngày, nên có `id`, `order`, `name`, `category`, `time`, `coords`, `description`.
 - `locations[].coords`: tọa độ `[lat, lng]`; nếu thiếu, điểm vẫn hiện trong danh sách nhưng không có marker bản đồ.
 - `locations[].mapUrl`: link Google Maps cho từng điểm.

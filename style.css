@@ -169,6 +169,26 @@ body{
   line-height:1.45;
 }
 
+.summary-route-link{
+  width:max-content;
+  max-width:100%;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:white;
+  background:var(--primary);
+  border-radius:999px;
+  padding:8px 11px;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.2;
+  text-decoration:none;
+}
+
+.summary-route-link:hover{
+  filter:brightness(.96);
+}
+
 .fact{
   background:#f8fafc;
   border:1px solid var(--line);
@@ -194,6 +214,29 @@ body{
   margin-top:2px;
 }
 
+.weather-fact span{
+  line-height:1.35;
+}
+
+.weather-refresh-icon{
+  margin-left:4px;
+  font-size:10px;
+  color:var(--primary);
+}
+
+.weather-fact:disabled{
+  cursor:wait;
+  opacity:.78;
+}
+
+.weather-refresh-icon.is-spinning{
+  animation:spin .85s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
 .fact-action{
   cursor:pointer;
   transition:.18s ease;
@@ -207,11 +250,6 @@ body{
 .fact.active{
   border-color:var(--primary);
   background:color-mix(in srgb,var(--primary) 8%,white);
-}
-
-.route-fact span::after{
-  content:"  ↗";
-  font-weight:800;
 }
 
 .itinerary-list{

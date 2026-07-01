@@ -35,7 +35,9 @@ window.TRIP_DATA = {
       summary: "Khởi hành từ Phú Mỹ qua cao tốc, dừng chân tại trạm TTC Phan Thiết - Vĩnh Hảo, ăn trưa và tham quan sinh thái tại Cao Nguyên Hoa Đà Lạt, nhận phòng khách sạn, tối di chuyển thẳng đến Cafe Dưới Tán Anh Đào kết hợp ăn uống nhẹ và thư giãn.",
       center: [11.5500, 108.1000],
       zoom: 10,
-      weather: "Mát mẻ, chiều tối có thể có sương mờ hoặc mưa nhẹ. Trang phục: nên chuẩn bị áo khoác nhẹ và giày dễ đi.",
+      weatherLocation: "Đà Lạt",
+      weatherCoords: [11.9404, 108.4583],
+      weather: "03/07: 17,8-21,0°C, mưa phùn/mưa nhỏ; xác suất mưa 97%, lượng mưa khoảng 6 mm. Nên mang áo mưa mỏng, áo khoác nhẹ và giày dễ đi.",
       estimatedCost: "Trung bình",
       routeMapUrl: "https://www.google.com/maps/dir/?api=1&origin=Ph%C3%BA+M%E1%BB%B9,+B%C3%A0+R%E1%BB%8B%E1%BA%A3+-+V%C5%A5ng+T%C3%A0u&destination=Cafe+D%C6%B0%E1%BB%9Bi+T%C3%A1n+Anh+%C4%90%C3%A0o+Nguy%E1%BB%85n+H%E1%BB%AFu+C%E1%BA%A3nh&waypoints=Tr%E1%BA%A1m+D%E1%BB%ABng+Ngh%E1%BB%8B+TTC+V%C4%A9nh+H%E1%BA%A3o+Phan+Thi%E1%BA%BFt%7CKhu+du+l%E1%BB%8Bch+sinh+th%C3%A1i+Cao+Nguy%C3%AAn+Hoa+%C4%90%C3%A0+L%E1%BA%A1t%7CBest+Western+Premier+Imperial+Hotel+Dalat",
       locations: [
@@ -109,7 +111,9 @@ window.TRIP_DATA = {
       summary: "Ăn sáng sớm tại khách sạn, đi Lạc Hư Cổ Trấn check-in concept cổ phong hướng Trại Mát - Xuân Trường, tham quan Puppy Farm, ăn trưa sinh thái tại Suối Bình Yên, vui chơi tại Dalat Wonderland, check-in Happy Hill, tối ăn GoGi House và dạo chợ đêm Đà Lạt.",
       center: [11.9300, 108.4550],
       zoom: 11,
-      weather: "Ngày mát, sáng sớm có thể có sương. Nên mang áo khoác nhẹ, giày đế bằng và hạn chế giày cao gót vì Lạc Hư Cổ Trấn có nhiều lối đi chụp ảnh ngoài trời.",
+      weatherLocation: "Đà Lạt",
+      weatherCoords: [11.9404, 108.4583],
+      weather: "04/07: 17,6-19,6°C, mưa rào vừa; xác suất mưa 100%, lượng mưa khoảng 14,6 mm. Ưu tiên áo mưa, giày đế bằng và lịch linh hoạt cho các điểm ngoài trời.",
       estimatedCost: "Cao",
       routeMapUrl: "https://www.google.com/maps/dir/?api=1&origin=Best+Western+Premier+Imperial+Hotel+Dalat+Hung+Vuong&destination=Cho+dem+Da+Lat&waypoints=Lac+Hu+Co+Tran+Da+Lat%7CNong+trai+thu+cung+Puppy+Farm%7CKDL+Suoi+Binh+Yen+Tuyen+Lam%7CDalat+Wonderland%7CPhim+truong+Happy+Hill%7CGoGi+House+Bui+Thi+Xuan+Da+Lat",
       locations: [
@@ -243,7 +247,9 @@ window.TRIP_DATA = {
       summary: "Thư thả ăn sáng, trả phòng khách sạn, di chuyển xuống Bảo Lộc tham quan đồi chè và ăn trưa tại Vườn trà Vinh An Oolong trước khi về lại Phú Mỹ.",
       center: [11.3000, 107.5000],
       zoom: 9,
-      weather: "Nắng ráo, nhiệt độ ấm dần khi di chuyển về vùng thấp. Cần kiểm tra phanh, xăng và nghỉ đủ trước khi xuống đèo.",
+      weatherLocation: "Bảo Lộc",
+      weatherCoords: [11.5480, 107.8077],
+      weather: "05/07: 20,2-25,3°C, mưa phùn/mưa nhỏ; xác suất mưa 90%, lượng mưa khoảng 11,5 mm. Cần kiểm tra phanh, xăng và chạy chậm nếu đường đèo ẩm.",
       estimatedCost: "Thấp",
       routeMapUrl: "https://www.google.com/maps/dir/?api=1&origin=Best+Western+Premier+Imperial+Hotel+Dalat+Hung+Vuong&destination=Ph%C3%BA+M%E1%BB%B9,+B%C3%A0+R%E1%BB%8B%E1%BA%A3+-+V%C5%A5ng+T%C3%A0u&waypoints=Vuon+tra+Vinh+An+Oolong+Tea+Bao+Loc",
       locations: [
