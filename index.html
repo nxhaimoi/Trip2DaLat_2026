@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Smart Travel Itinerary</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script async src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" onload="window.dispatchEvent(new Event('leaflet-ready'))"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./trip-data.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar">
+      <section class="hero">
+        <div>
+          <p id="tripSubtitle" class="eyebrow"></p>
+          <h1 id="tripTitle"></h1>
+          <p id="tripMeta"></p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div id="dayTabs" class="day-tabs"></div>
+      </section>
+
+      <section class="list-scroll">
+        <div id="overviewCard" class="overview-card"></div>
+        <div id="itineraryList" class="itinerary-list"></div>
+        <div id="notesPanel" class="notes-panel"></div>
+      </section>
+    </aside>
+
+    <main class="map-area">
+      <div id="map"></div>
+
+      <div class="map-toolbar">
+        <button id="fitRouteBtn" class="toolbar-btn" type="button">
+          <i class="fa-solid fa-route"></i>
+          Xem toàn tuyến
+        </button>
+        <button onclick="window.print()" class="toolbar-btn" type="button">
+          <i class="fa-solid fa-print"></i>
+          In/PDF
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
