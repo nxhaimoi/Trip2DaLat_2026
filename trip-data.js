@@ -26,18 +26,19 @@ window.TRIP_DATA = {
     }
   },
 
+  
   days: [
     {
       day: 1,
       title: "Hành trình lên Cao Nguyên",
       themeColor: "#2563eb",
       date: "2026-07-03",
-      summary: "Di chuyển qua tuyến cao tốc, nghỉ ngơi tại Trạm dừng chân TTC Phan Thiết - Vĩnh Hảo, ăn trưa Chuồn Chuồn Bistro, nhận phòng khách sạn, ăn tối cơm lam gà nướng và chill cà phê Horizon.",
+      summary: "Di chuyển qua tuyến cao tốc mới, nghỉ ngroi tại trạm TTC Phan Thiết, tham quan sinh thái Cao Nguyên Hoa, ăn tối cơm lam gà nướng và chill cà phê Horizon.",
       center: [11.5500, 108.1000],
       zoom: 10,
       weather: "Mát mẻ, có thể có mưa nhẹ vào chiều tối. Trang phục: Giữ ấm nhẹ.",
       estimatedCost: "Trung bình",
-      routeMapUrl: "https://www.google.com/maps/dir/Phú+Mỹ,+Bà+Rịa+-+Vũng+Tàu/Trạm+Dừng+Chân+TTC+Phan+Thiết+Vĩnh+Hảo/Chuồn+Chuồn+Bistro+%26+Coffee/Best+Western+Premier+Imperial+Hotel+Dalat/Gà+Nướng+Cơm+Lam+Trên+Đỉnh+Đồi+Trăng/Horizon+Coffee+Đà+Lạt",
+      routeMapUrl: "https://www.google.com/maps/dir/Phú+Mỹ,+Bà+Rịa+-+Vũng+Tàu/Trạm+Dừng+Chân+TTC+Phan+Thiết+Vĩnh+Hảo/Khu+du+lịch+sinh+thái+Cao+Nguyên+Hoa+Đà+Lạt/Best+Western+Premier+Imperial+Hotel+Dalat/Gà+Nướng+Cơm+Lam+Trên+Đỉnh+Đồi+Trăng/Horizon+Coffee+Đà+Lạt",
       locations: [
         {
           id: "tram-dung-chan-ttc-phan-thiet-vinh-hao",
@@ -47,27 +48,27 @@ window.TRIP_DATA = {
           address: "Tuyến cao tốc Phan Thiết - Vĩnh Hảo, Bình Thuận",
           time: "08:15 - 08:45",
           icon: "fa-coffee",
-          coords: [11.0562, 108.2411],
-          description: "Điểm dừng chân nghỉ ngơi, ăn sáng nhẹ và giải quyết nhu cầu cá nhân trên tuyến cao tốc mới trước khi rẽ hướng lên Đà Lạt.",
-          highlight: "Hiện đại, sạch sẽ, thuận tiện cung đường cao tốc",
+          coords: [11.1215, 108.2844],
+          description: "Điểm dừng chân nghỉ ngơi, nạp năng lượng và đi vệ sinh trên tuyến cao tốc mới trước khi chuyển hướng đi Lâm Đồng.",
+          highlight: "Cơ sở vật chất hiện đại, sạch sẽ trên tuyến cao tốc",
           duration: "30 phút",
           cost: "Ăn uống tự chọn",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Tram+dung+chan+TTC+Phan+Thiet+Vinh+Hao"
         },
         {
-          id: "kdl-chuon-chuon-bistro-coffee",
+          id: "cao-nguyen-hoa-da-lat",
           order: 2,
-          name: "KDL Chuồn Chuồn Bistro & Coffee",
-          category: "Ăn uống",
-          address: "Số 292, Thôn 3, Xã Mê Linh, Lâm Hà, Lâm Đồng (Chân đèo Tà Nung)",
-          time: "12:00 - 14:15",
-          icon: "fa-utensils",
-          coords: [11.8956, 108.3314],
-          description: "Ăn trưa, thưởng thức cà phê và chụp ảnh thiên nhiên mộc mạc thư giãn giữa đồi núi.",
-          highlight: "View đồi chè, thác nước nhân tạo chụp hình siêu đẹp",
-          duration: "2 giờ 15 phút",
-          cost: "Ăn uống và vé tham quan tự chọn",
-          mapUrl: "https://www.google.com/maps/search/?api=1&query=Chuon+Chuon+Bistro+Coffee+Da+Lat"
+          name: "KDL sinh thái Cao Nguyên Hoa Đà Lạt",
+          category: "Tham quan",
+          address: "Tiểu khu 158, Đường Đèo Tà Nung, Phường 5, Thành phố Đà Lạt, Lâm Đồng",
+          time: "11:45 - 14:30",
+          icon: "fa-leaf",
+          coords: [11.9482, 108.3846],
+          description: "Không gian bảo tồn sinh thái ngập tràn sắc hoa rực rỡ, đồi thông xanh mát. Gia đình nghỉ ngơi, ăn trưa nhẹ và trải nghiệm chụp hình mộc mạc thư giãn.",
+          highlight: "Quán cà phê gỗ giữa rừng thông và xích đu lớn ngắm cảnh rừng",
+          duration: "2 giờ 45 phút",
+          cost: "Cần mua vé tham quan và ăn uống tự chọn",
+          mapUrl: "https://www.google.com/maps/search/?api=1&query=Khu+du+lich+sinh+thai+Cao+Nguyen+Hoa+Da+Lat"
         },
         {
           id: "best-western-premier-imperial-da-lat",
@@ -75,12 +76,12 @@ window.TRIP_DATA = {
           name: "Best Western Premier Imperial Đà Lạt",
           category: "Nghỉ ngơi",
           address: "2-4 Đường Trần Phú, Phường 3, Thành phố Đà Lạt, Lâm Đồng",
-          time: "15:00 - 17:30",
+          time: "15:15 - 17:30",
           icon: "fa-hotel",
           coords: [11.9348, 108.4385],
-          description: "Nhận phòng khách sạn, sắp xếp hành lý và nghỉ ngơi hồi phục sức khỏe.",
-          highlight: "Khách sạn cao cấp trung tâm thành phố",
-          duration: "2 giờ 30 phút",
+          description: "Nhận phòng khách sạn ổn định hành lý, nghỉ ngơi sau chặng đường dài di chuyển đường đèo núi.",
+          highlight: "Khách sạn cao cấp vị trí trung tâm vô cùng thuận tiện",
+          duration: "2 giờ 15 phút",
           cost: "Đã thanh toán phòng",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Best+Western+Premier+Imperial+Hotel+Dalat"
         },
@@ -93,10 +94,10 @@ window.TRIP_DATA = {
           time: "18:00 - 19:45",
           icon: "fa-bowl-food",
           coords: [11.9333, 108.4255],
-          description: "Thưởng thức món gà đồi nướng da giòn dẻo ngọt cùng cơm lam ống tre thơm nồng giữa không gian sân vườn đồi thông thoáng đãng.",
-          highlight: "Gà nướng đậm đà hương vị núi rừng Tây Nguyên",
+          description: "Thưởng thức bữa tối đậm đà hương vị núi rừng với gà đồi nướng mọi vàng ươm ăn kèm cơm lam ống tre dẻo thơm trong không gian sân vườn đồi thông lãng mạn.",
+          highlight: "Gà nướng chuẩn vị Tây Nguyên chắc thịt ngọt da",
           duration: "1 giờ 45 phút",
-          cost: "Theo giá món ăn trên thực đơn",
+          cost: "Chi phí ăn uống gọi món theo thực đơn",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Ga+Nuong+Com+Lam+Tren+Dinh+Doi+Trang"
         },
         {
@@ -108,25 +109,25 @@ window.TRIP_DATA = {
           time: "20:00 - 21:30",
           icon: "fa-mug-saucer",
           coords: [11.9205, 108.4485],
-          description: "Thưởng thức đồ uống ấm áp và chiêm ngưỡng khu vườn trên mây lung linh ánh đèn hướng thẳng ra thung lũng rừng thông bạt ngàn về đêm.",
-          highlight: "Cột đèn check-in độc đáo bao trọn view rừng thông đêm",
+          description: "Thưởng thức ly trà gừng hoặc cà phê ấm áp, chill cùng không gian nhà lồng đèn lung linh hướng tầm mắt ngắm thung lũng thông ẩn hiện trong sương mờ ban đêm.",
+          highlight: "View panorama bao trọn thung lũng rừng thông sương đêm độc đáo",
           duration: "1 giờ 30 phút",
-          cost: "Giá nước từ 60.000 - 100.000 VND",
+          cost: "Giá đồ uống từ 60.000 - 100.000 VND",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Horizon+Coffee+Da+Lat"
         }
       ]
     },
     {
       day: 2,
-      title: "Vui chơi bung sức & Không gian Acoustic",
+      title: "Vui chơi bung sức & Không gian Suối bình yên",
       themeColor: "#f97316",
       date: "2026-07-04",
-      summary: "Thưởng thức buffet sáng, check-in cà phê Lululola, bung xõa tại Dalat Wonderland, ăn trưa cá tầm bên hồ Tuyền Lâm, ăn tối thịt nướng GoGi và chill Acoustic chợ đêm.",
+      summary: "Thưởng thức buffet sáng, check-in view mây ngàn tại Lululola, bung xõa tại Dalat Wonderland, ăn trưa dạo mát sinh thái tại Suối Bình Yên, ăn tối thịt nướng và chill chợ đêm.",
       center: [11.9100, 108.4300],
       zoom: 12,
-      weather: "Ngày nắng ráo thích hợp vận động ngoài trời, tối se lạnh thích hợp nghe nhạc.",
+      weather: "Ngày nắng ráo rực rỡ thích hợp hoạt động ngoài trời, tối se lạnh lãng mạn.",
       estimatedCost: "Cao",
-      routeMapUrl: "https://www.google.com/maps/dir/Best+Western+Premier+Imperial+Hotel+Dalat/Lululola+Coffee%2B/Dalat+Wonderland/Nhà+hàng+Hồ+Tuyền+Lâm/GoGi+House+Đà+Lạt/Chợ+đêm+Đà+Lạt",
+      routeMapUrl: "https://www.google.com/maps/dir/Best+Western+Premier+Imperial+Hotel+Dalat/Lululola+Coffee%2B/Dalat+Wonderland/Suối+Bình+Yên+Đà+Lạt/GoGi+House+Đà+Lạt/Chợ+đêm+Đà+Lạt",
       locations: [
         {
           id: "buffet-sang-khach-san",
@@ -137,10 +138,10 @@ window.TRIP_DATA = {
           time: "07:30 - 08:15",
           icon: "fa-utensils",
           coords: [11.9348, 108.4385],
-          description: "Nạp năng lượng với buffet sáng đa dạng chất lượng tại nhà hàng của khách sạn.",
-          highlight: "Không gian sang trọng, món ăn phong phú",
+          description: "Thưởng thức bữa sáng tự chọn chất lượng phong phú tại không gian nhà hàng sang trọng của khách sạn.",
+          highlight: "Món ăn đa dạng chuẩn bị thể lực cho ngày vui chơi năng động",
           duration: "45 phút",
-          cost: "Bao gồm trong giá phòng",
+          cost: "Đã bao gồm trong chi phí phòng",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Best+Western+Premier+Imperial+Hotel+Dalat"
         },
         {
@@ -152,10 +153,10 @@ window.TRIP_DATA = {
           time: "08:30 - 09:45",
           icon: "fa-cloud-sun",
           coords: [11.9231, 108.4489],
-          description: "Cà phê view mây ngàn, rừng thông nổi tiếng đón nắng sớm bình yên.",
-          highlight: "Góc ngắm thung lũng thông reo tuyệt đẹp",
+          description: "Đón nắng sớm đầu ngày tại quán cà phê không gian mở bằng gỗ, ngắm mây mờ lãng mạn vắt ngang thung lũng thông reo.",
+          highlight: "Tầm nhìn thung lũng mây ngàn bình yên và mộc mạc",
           duration: "1 giờ 15 phút",
-          cost: "Giá nước từ 80.000 VND",
+          cost: "Chi phí đồ uống tự chọn",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Lululola+Coffee+Da+Lat"
         },
         {
@@ -167,26 +168,26 @@ window.TRIP_DATA = {
           time: "10:00 - 13:00",
           icon: "fa-jedi",
           coords: [11.8967, 108.4124],
-          description: "Bung sức chơi xe địa hình ATV, trải nghiệm trượt tuyết nhà băng; tham quan khu kẹo ngọt đầy màu sắc cho các bé.",
-          highlight: "Đa dạng trò chơi cảm giác mạnh và khu chụp ảnh gia đình",
+          description: "Bung sức với các hoạt động trải nghiệm kích thích: chạy xe địa hình ATV vượt địa hình, trượt tuyết lạnh giá tại lâu đài băng; bé dạo chơi khu kẹo ngọt sắc màu.",
+          highlight: "Hệ thống trò chơi hiện đại, phong phú đa trải nghiệm cho mọi lứa tuổi",
           duration: "3 giờ",
-          cost: "Cần mua vé trọn gói",
+          cost: "Cần mua vé trọn gói vào cổng",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Dalat+Wonderland+Ho+Tuyen+Lam"
         },
         {
-          id: "nha-hang-ho-tuyen-lam",
+          id: "suoi-binh-yen-da-lat",
           order: 4,
-          name: "Nhà hàng Hồ Tuyền Lâm",
+          name: "KDL Suối Bình Yên",
           category: "Ăn uống",
           address: "Khu du lịch Hồ Tuyền Lâm, Phường 4, Thành phố Đà Lạt, Lâm Đồng",
-          time: "13:15 - 14:45",
-          icon: "fa-fish",
-          coords: [11.8992, 108.4168],
-          description: "Thưởng thức bữa trưa với các món đặc sản cá tầm tươi sống bên bờ hồ Tuyền Lâm mát mẻ.",
-          highlight: "Cá tầm tươi ngon nguyên con chế biến nhiều món",
-          duration: "1 giờ 30 phút",
-          cost: "Khoảng 300.000 - 500.000 VND / người",
-          mapUrl: "https://www.google.com/maps/search/?api=1&query=Nha+hang+Khu+du+lich+Ho+Tuyen+Lam"
+          time: "13:15 - 16:30",
+          icon: "fa-water",
+          coords: [11.8912, 108.4085],
+          description: "Thưởng thức bữa trưa mộc mạc bản địa, sau đó gia đình nghỉ ngơi dạo mát bên dòng suối nhỏ yên bình, tĩnh lặng uốn lượn dưới tán rừng thông bao quanh.",
+          highlight: "Không gian suối tự nhiên hoang sơ, yên tĩnh thư thả sau khi vận động mạnh",
+          duration: "3 giờ 15 phút",
+          cost: "Chi phí ăn uống và vé vào cửa sinh thái",
+          mapUrl: "https://www.google.com/maps/search/?api=1&query=Suoi+Binh+Yen+Da+Lat"
         },
         {
           id: "gogi-house-da-lat",
@@ -197,10 +198,10 @@ window.TRIP_DATA = {
           time: "18:00 - 19:45",
           icon: "fa-fire-burner",
           coords: [11.9392, 108.4428],
-          description: "Ăn tối thịt nướng Hàn Quốc ấm cúng tại trung tâm phố núi sầm uất.",
-          highlight: "Thịt nướng xèo xèo chuẩn vị trong tiết trời lạnh",
+          description: "Bữa tối thịt nướng Hàn Quốc ấm áp chất lượng ổn định ngay cạnh hồ Xuân Hương sầm uất trung tâm.",
+          highlight: "Không khí ăn nướng xèo xèo quây quần cực hợp tiết trời lạnh",
           duration: "1 giờ 45 phút",
-          cost: "Theo giá menu buffet/gọi món GoGi",
+          cost: "Ăn uống gọi món hoặc buffet theo menu",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=GoGi+House+Tran+Quoc+Toan+Da+Lat"
         },
         {
@@ -212,10 +213,10 @@ window.TRIP_DATA = {
           time: "20:00 - 22:00",
           icon: "fa-guitar",
           coords: [11.9424, 108.4377],
-          description: "Dạo chợ đêm mua sắm quà lưu niệm, ăn vặt bánh tráng nướng và hòa mình vào đêm nhạc Acoustic live cực chill.",
-          highlight: "Âm nhạc sống động hòa trong gió lạnh phố núi",
+          description: "Dạo bước chợ đêm mua sắm quà lưu niệm, ăn bánh tráng nướng vỉa hè và lắng đọng cùng đêm ca nhạc Acoustic live vô cùng chill lãng mạn.",
+          highlight: "Âm nhạc mộc mạc len lỏi trong cái lạnh đặc trưng phố núi",
           duration: "2 giờ",
-          cost: "Miễn phí dạo chơi, trả tiền nước/vé nghe nhạc",
+          cost: "Miễn phí dạo chơi, trả tiền ăn vặt và vé nghe nhạc",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Cho+dem+Da+Lat"
         }
       ]
@@ -225,10 +226,10 @@ window.TRIP_DATA = {
       title: "Trả phòng - Ăn trưa sinh thái về xuôi",
       themeColor: "#10b981",
       date: "2026-07-05",
-      summary: "Thư thả ăn sáng tại khách sạn, check-out và di chuyển về Bảo Lộc ăn trưa đồi chè Đôi Dép trước khi thẳng tiến về Phú Mỹ.",
+      summary: "Thư thả buffet sáng, check-out khách sạn lúc 10:00, di chuyển xuống Bảo Lộc ăn trưa không gian đồi chè mát mẻ trước khi thẳng tiến về Phú Mỹ.",
       center: [11.3000, 107.5000],
       zoom: 9,
-      weather: "Nắng ráo cung đường đèo, nhiệt độ tăng dần khi xuống vùng đồng bằng.",
+      weather: "Nắng ráo cung đường đèo núi, nhiệt độ ấm dần lên khi di chuyển về vùng đồng bằng.",
       estimatedCost: "Thấp",
       routeMapUrl: "https://www.google.com/maps/dir/Best+Western+Premier+Imperial+Hotel+Dalat/Cà+phê+Đôi+Dép+Tea+Garden+Bảo+Lộc/Trạm+Dừng+Nghỉ+Cao+Tốc+Long+Thành+Dầu+Giây/Phú+Mỹ,+Bà+Rịa+-+Vũng+Tàu",
       locations: [
@@ -241,10 +242,10 @@ window.TRIP_DATA = {
           time: "08:00 - 10:00",
           icon: "fa-suitcase",
           coords: [11.9348, 108.4385],
-          description: "Thưởng thức buffet sáng chậm rãi và hoàn tất thủ tục trả phòng khách sạn lúc 10:00.",
-          highlight: "Thư thả, chuẩn bị hành trình về xuôi",
+          description: "Thưởng thức bữa sáng thong thả, đóng gói hành lý cá nhân và hoàn tất thủ tục check-out khách sạn đúng giờ quy định.",
+          highlight: "Nghỉ ngơi thoải mái trước khi xuống đèo",
           duration: "2 giờ",
-          cost: "Miễn phí theo phòng",
+          cost: "Bao gồm trong dịch vụ phòng",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Best+Western+Premier+Imperial+Hotel+Dalat"
         },
         {
@@ -256,10 +257,10 @@ window.TRIP_DATA = {
           time: "12:30 - 14:15",
           icon: "fa-leaf",
           coords: [11.4811, 107.8183],
-          description: "Không gian sinh thái đồi chè xanh mát tuyệt đẹp, vị trí hoàn hảo để ăn trưa và nghỉ ngơi thư giãn giữa chặng đường về.",
-          highlight: "Khuôn viên sinh thái đồi chè rộng lớn, thoáng đãng",
+          description: "Điểm nghỉ chân ăn trưa hoàn hảo nằm trên cung đường về xuôi với khuôn viên đồi chè rộng lớn, sinh thái xanh mát giải tỏa mệt mỏi.",
+          highlight: "Không gian sân vườn đồi chè thoáng đạt, đồ ăn ngon",
           duration: "1 giờ 45 phút",
-          cost: "Ăn uống theo menu nhà hàng",
+          cost: "Ăn uống gọi món theo thực đơn nhà hàng",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Doi+Dep+Tea+Garden+452+Tran+Phu+Bao+Loc"
         },
         {
@@ -271,10 +272,10 @@ window.TRIP_DATA = {
           time: "16:45 - 17:15",
           icon: "fa-gas-pump",
           coords: [10.9250, 107.1900],
-          description: "Điểm nghỉ kỹ thuật chặng cuối trước khi rẽ về lại Phú Mỹ, BRVT.",
-          highlight: "Tiện lợi, nhanh chóng",
+          description: "Trạm nghỉ kỹ thuật ngắn chặng cuối trước khi xe rẽ hướng quay trở lại Phú Mỹ, kết thúc hành trình.",
+          highlight: "Tiện lợi, nhanh chóng kiểm tra xe, nhiên liệu",
           duration: "30 phút",
-          cost: "Tự túc",
+          cost: "Tự túc chi phí ăn uống nhẹ cá nhân nếu có",
           mapUrl: "https://www.google.com/maps/search/?api=1&query=Tram+dung+nghi+Cao+toc+Long+Thanh+Dau+Giay"
         }
       ]
@@ -282,9 +283,9 @@ window.TRIP_DATA = {
   ],
 
   notes: [
-    "Di chuyển đường đèo Tà Nung và đèo Bảo Lộc cần chú ý tốc độ và giữ khoảng cách an toàn, đặc biệt nếu trời mưa trơn trượt.",
-    "Vé tham quan tại Dalat Wonderland nên đặt trước hoặc mua combo để tiết kiệm thời gian xếp hàng.",
-    "Chuẩn bị sẵn đồ ấm (áo khoác nhẹ, khăn) cho cả người lớn và trẻ nhỏ vì nhiệt độ Đà Lạt giảm nhanh sau 18:00.",
-    "Mang theo giày thể thao hoặc giày bệt để thoải mái tham gia các hoạt động vận động địa hình và đi bộ tại chợ đêm."
+    "Di chuyển qua trục đường cao tốc Phan Thiết - Vĩnh Hảo giúp hành trình Ngày 1 mượt mà và tối ưu thời gian hơn.",
+    "Cung đường đèo Tà Nung tuy phong cảnh đẹp mộc mạc nhưng dốc uốn lượn nhiều, lái xe cần chú ý kiểm soát tốc độ ổn định.",
+    "Nhiệt độ chiều muộn Đà Lạt giảm rất nhanh sau 18:00, cần chuẩn bị trang phục giữ ấm đầy đủ cho cả người lớn và bé nhỏ trong cốp xe.",
+    "Điểm đến Suối Bình Yên nằm cạnh hồ Tuyền Lâm có địa hình tự nhiên, nên mang giày bệt hoặc giày thể thao để dễ dàng di chuyển dạo mát."
   ]
 };
